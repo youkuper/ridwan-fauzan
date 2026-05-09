@@ -1,0 +1,421 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --accent-color: #667eea;
+    --accent-hover: #5a67d8;
+    --success-color: #48bb78;
+    --danger-color: #f56565;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #cbd5e0;
+    --border-color: #4a5568;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: var(--transition);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.theme-toggle button {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== Dashboard Layout ===== */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+section {
+    background: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+section:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+section h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* ===== Greeting Section ===== */
+.greeting-section {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.clock {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.greeting-text {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.name-input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.name-input {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.name-display {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.edit-name-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.edit-name-btn:hover {
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ===== Timer Section ===== */
+.timer-display {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.timer-text {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--text-secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6c7d;
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background: #e53e3e;
+    transform: translateY(-2px);
+}
+
+.btn-add {
+    background: var(--success-color);
+    color: white;
+    font-size: 1.5rem;
+    padding: 8px 20px;
+}
+
+.btn-add:hover {
+    background: #38a169;
+}
+
+/* ===== To-Do List Section ===== */
+.todo-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.todo-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.todo-text.editing {
+    border: 2px solid var(--accent-color);
+    padding: 5px;
+    border-radius: 4px;
+    background: var(--bg-secondary);
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.todo-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ===== Quick Links Section ===== */
+.links-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.link-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.link-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.links-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.link-item {
+    padding: 15px;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    cursor: pointer;
+}
+
+.link-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.link-item a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: block;
+}
+
+.link-delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.link-item:hover .link-delete {
+    opacity: 1;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .clock {
+        font-size: 2.5rem;
+    }
+
+    .greeting-text {
+        font-size: 1.5rem;
+    }
+
+    .timer-text {
+        font-size: 2.5rem;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+    }
+
+    .links-input-wrapper {
+        flex-direction: column;
+    }
+}
