@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard - Produktivitas Harian</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="theme-toggle">
+                <button id="themeToggle" aria-label="Toggle theme">
+                    <span class="icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Greeting Section -->
+            <section class="greeting-section">
+                <div class="time-display">
+                    <h1 id="clock" class="clock">00:00:00</h1>
+                    <p id="date" class="date">Loading...</p>
+                </div>
+                <div class="greeting">
+                    <h2 id="greeting" class="greeting-text">Selamat Datang</h2>
+                    <div class="name-input-wrapper">
+                        <input type="text" id="nameInput" class="name-input" placeholder="Siapa nama Anda?">
+                        <p id="nameDisplay" class="name-display hidden"></p>
+                        <button id="editName" class="edit-name-btn hidden">✏️</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Focus Timer Section -->
+            <section class="timer-section">
+                <h3>Focus Timer</h3>
+                <div class="timer-display">
+                    <span id="timerDisplay" class="timer-text">25:00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="startTimer" class="btn btn-primary">Start</button>
+                    <button id="stopTimer" class="btn btn-secondary">Stop</button>
+                    <button id="resetTimer" class="btn btn-tertiary">Reset</button>
+                </div>
+            </section>
+
+            <!-- To-Do List Section -->
+            <section class="todo-section">
+                <h3>To-Do List</h3>
+                <div class="todo-input-wrapper">
+                    <input type="text" id="todoInput" class="todo-input" placeholder="Tambah tugas baru...">
+                    <button id="addTodo" class="btn btn-add">+</button>
+                </div>
+                <ul id="todoList" class="todo-list"></ul>
+            </section>
+
+            <!-- Quick Links Section -->
+            <section class="links-section">
+                <h3>Quick Links</h3>
+                <div class="links-input-wrapper">
+                    <input type="text" id="linkName" class="link-input" placeholder="Nama website">
+                    <input type="url" id="linkUrl" class="link-input" placeholder="https://example.com">
+                    <button id="addLink" class="btn btn-add">+</button>
+                </div>
+                <div id="linksList" class="links-list"></div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Life Dashboard | Made with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
